@@ -3,15 +3,15 @@ import type { Profile } from "@/lib/types";
 export const profile: Profile = {
   name: "Fathur Rahman Rifaldi",
   shortName: "Fathur",
-  role: "AI Engineer | Fullstack Developer | IT Support",
+  role: "IT Support | AI Automation & System Integration",
   tagline:
-    "Full-stack developer who digitizes real operational workflows Laravel & React/Supabase apps built with a focus on data integrity, from community waste management to salon booking systems",
+    "Building AI-powered automation and system integrations to streamline workflows, connect services, and solve real-world business problems efficiently.",
   status: "7th-semester Information Systems student",
   location: "Bekasi, Indonesia",
   availability: "3-6 Months",
   email: "fathurrahmanrifaldi@gmail.com",
   cvUrl:
-    "https://drive.google.com/file/d/105-EoiMJ52m5PMxY9GzkyY_7VbiJv4J0/view?usp=sharing",
+    "https://drive.google.com/file/d/1VbLh95IBsHviLtqM2QlRULOStFXcyafW/view?usp=sharing",
   socials: [
     {
       label: "GitHub",

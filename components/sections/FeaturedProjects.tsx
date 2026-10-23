@@ -9,7 +9,7 @@ export function FeaturedProjects() {
       id="projects"
       index="01"
       eyebrow="Projects"
-      title="Web apps I built for a waste bank, a salon, and a grocery stall"
+      title="AI Automation I Built For Financial Tracker, Customer Feedback Sentiment Analyzer, And Home AI Agent"
       intro="Each case study covers the problem, my part in it, the architecture, and the parts I would change next."
     >
       <div className="space-y-24 sm:space-y-32">

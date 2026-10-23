@@ -9,12 +9,12 @@ interface StackItem {
 }
 
 const STACKS: StackItem[] = [
-  { name: "React.js", category: "Frontend", color: "#00D8FE" },
-  { name: "Next.js", category: "Frontend", color: "#00D8FE" },
-  { name: "Laravel", category: "Backend", color: "#F05340" },  
-  { name: "Supabase", category: "Database", color: "#00D8FE" }, 
+  { name: "n8n", category: "Automation", color: "#00D8FE" },    
+  { name: "REST API", category: "API", color: "#00D8FE" },
+  { name: "JSON", category: "API", color: "#00D8FE" },
+  { name: "Python", category: "Programming", color: "#336791" },
   { name: "PostgreSQL", category: "Database", color: "#336791" },
-  { name: "MySQL", category: "Database", color: "#F29111" },
+  { name: "Javascript", category: "Programming", color: "#336791" },
 ];
 
 const ITEM_HEIGHT_PX = 28;

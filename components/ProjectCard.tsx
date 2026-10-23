@@ -80,11 +80,6 @@ export function ProjectCard({ project, index }: Props) {
             <ArrowRight width={16} height={16} className="transition-transform group-hover:translate-x-1" />
             <span className="sr-only">: {project.title}</span>
           </Link>          
-          <ExternalLink
-            href={project.githubUrl}
-            label="GitHub"
-            icon={<GitHub width={16} height={16} />}
-          />
           <ExternalLink href={project.liveUrl} label="Live demo" />
         </div>
       </div>
