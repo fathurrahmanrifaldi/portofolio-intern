@@ -21,6 +21,8 @@ export type Project = {
   liveUrl: string;
   /** Absolute URL or a "[TODO: ...]" string */
   githubUrl: string;
+  /** YouTube video URL or ID (optional). e.g. "https://www.youtube.com/watch?v=..." */
+  youtubeUrl?: string;
   /** Path under /public, e.g. "/projects/basara.png". null shows a placeholder. */
   image: string | null;
   imageAlt: string;

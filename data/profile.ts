@@ -3,7 +3,7 @@ import type { Profile } from "@/lib/types";
 export const profile: Profile = {
   name: "Fathur Rahman Rifaldi",
   shortName: "Fathur",
-  role: "Fullstack Web Developer",
+  role: "AI Engineer | Fullstack Developer | IT Support",
   tagline:
     "Full-stack developer who digitizes real operational workflows Laravel & React/Supabase apps built with a focus on data integrity, from community waste management to salon booking systems",
   status: "7th-semester Information Systems student",

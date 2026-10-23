@@ -9,6 +9,7 @@ import { ExternalLink } from "@/components/ui/ExternalLink";
 import { Container } from "@/components/ui/Section";
 import { TodoText } from "@/components/ui/TodoText";
 import { ProjectVisual } from "@/components/ProjectVisual";
+import { YouTubeEmbed } from "@/components/YouTubeEmbed";
 
 type Params = { slug: string };
 
@@ -86,28 +87,35 @@ export default async function ProjectPage({ params }: { params: Promise<Params> 
 
         <div className="mt-16 grid gap-12 lg:grid-cols-12">
           <aside className="lg:col-span-4">
-            <dl className="border-border bg-surface divide-border divide-y rounded-2xl border lg:sticky lg:top-24">
-              <div className="p-5">
-                <dt className="text-muted font-mono text-xs uppercase">My role</dt>
-                <dd className="text-fg mt-1.5 font-medium">
-                  <TodoText>{project.role}</TodoText>
-                </dd>
-              </div>
-              <div className="p-5">
-                <dt className="text-muted font-mono text-xs uppercase">Tech stack</dt>
-                <dd className="mt-3 flex flex-wrap gap-2">
-                  {project.stack.map((t) => (
-                    <Badge key={t}>{t}</Badge>
-                  ))}
-                </dd>
-              </div>
-              <div className="p-5">
-                <dt className="text-muted font-mono text-xs uppercase">Outcome</dt>
-                <dd className="text-fg mt-1.5">
-                  <TodoText>{project.outcome}</TodoText>
-                </dd>
-              </div>
-            </dl>
+            <div className="space-y-6 lg:sticky lg:top-24">
+              <YouTubeEmbed
+                url={project.youtubeUrl}
+                title={`${project.title} Video Presentation`}
+              />
+
+              <dl className="border-border bg-surface divide-border divide-y rounded-2xl border">
+                <div className="p-5">
+                  <dt className="text-muted font-mono text-xs uppercase">My role</dt>
+                  <dd className="text-fg mt-1.5 font-medium">
+                    <TodoText>{project.role}</TodoText>
+                  </dd>
+                </div>
+                <div className="p-5">
+                  <dt className="text-muted font-mono text-xs uppercase">Tech stack</dt>
+                  <dd className="mt-3 flex flex-wrap gap-2">
+                    {project.stack.map((t) => (
+                      <Badge key={t}>{t}</Badge>
+                    ))}
+                  </dd>
+                </div>
+                <div className="p-5">
+                  <dt className="text-muted font-mono text-xs uppercase">Outcome</dt>
+                  <dd className="text-fg mt-1.5">
+                    <TodoText>{project.outcome}</TodoText>
+                  </dd>
+                </div>
+              </dl>
+            </div>
           </aside>
 
           <div className="space-y-14 lg:col-span-8">

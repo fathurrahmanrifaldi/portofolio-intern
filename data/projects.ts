@@ -7,11 +7,11 @@ import type { Project } from "@/lib/types";
  */
 export const projects: Project[] = [    
   {
-    slug: "basara",
-    title: "Management System for RW 042 Waste Bank (BASARA)",
-    originalName: "Sistem Manajemen Bank Sampah RW 042 (BASARA)",
-    problem: "Management of the waste bank operations in RW 042 still relies on manual physical record-keeping",
-    role: "Fullstack Web Developer",
+    slug: "financial-tracker",
+    title: "AI-Powered Financial Receipt Tracker (n8n & Gemini AI)",
+    originalName: "AI-Powered Financial Receipt Tracker (n8n & Gemini AI)",
+    problem: "Financial tracking still relies on manual entry from physical receipts and PDF files, which is time-consuming, error-prone, and inefficient for businesses needing real-time financial insights.",
+    role: "Fullstack Developer",
     stack: ["Laravel, Tailwind CSS, MySQL"],
     features: [
       "Recording multi-item waste deposits in a single dynamic form",
@@ -30,11 +30,12 @@ export const projects: Project[] = [
     nextSteps: ["Integrate WhatsApp API for automatic notifications of deposit details and balance withdrawal status to residents' phones in real-time"],
     liveUrl: "https://basara.up.railway.app/",
     githubUrl: "https://github.com/fathurrahmanrifaldi/BASARA",
+    youtubeUrl: "https://www.youtube.com/watch?v=dQw4w9WgXcQ",
     image: "/projects/basara-photo.png",
     imageAlt: "Screenshot of the BASARA waste bank system dashboard",
   },
   {
-    slug: "simetris",
+    slug: "home-ai-agent",
     title: "Management System for Grocery Store Inventory (SIMETRIS)",
     originalName: "Sistem Manajemen Inventaris (SIMETRIS) Warung Sembako Ibu Trisna",
     problem: "Inventory management at Warung Sembako Ibu Trisna is still done manually, leading to stock discrepancies and inefficient sales tracking",
@@ -56,11 +57,12 @@ export const projects: Project[] = [
     nextSteps: ["Memanfaatkan *HTML5 / BarcodeDetector Web API* langsung dari kamera smartphone untuk memindai kode batang sembako"],
     liveUrl: "https://simetrisku.vercel.app",
     githubUrl: "https://github.com/fathurrahmanrifaldi/simetris",
+    youtubeUrl: "https://www.youtube.com/watch?v=dQw4w9WgXcQ",
     image: "/projects/simetris.png",
     imageAlt: "Screenshot of the Warung Ibu Trisna inventory system",
   },
   {
-    slug: "eva-salon",
+    slug: "customer-feedback-sentiment-analyzer",
     title: "Eva Salon Booking Website",
     originalName: "Website Booking Eva Salon",
     problem: "Schedule and booking management at Eva Salon is still done manually and is prone to errors",
@@ -82,6 +84,7 @@ export const projects: Project[] = [
     nextSteps: ["Integrate a payment gateway for online payments and implement a loyalty program for frequent customers."],
     liveUrl: "https://evasalon.up.railway.app/",
     githubUrl: "https://github.com/fathurrahmanrifaldi/eva-salon",
+    youtubeUrl: "https://www.youtube.com/watch?v=dQw4w9WgXcQ",
     image: "/projects/evasalon-photo.png",
     imageAlt: "Screenshot of the Eva Salon booking website",
   },
