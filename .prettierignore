@@ -1,0 +1,6 @@
+.next
+node_modules
+out
+stop-slop
+.agents
+package-lock.json

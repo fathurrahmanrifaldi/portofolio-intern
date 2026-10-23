@@ -1,0 +1,171 @@
+@import "tailwindcss";
+
+/* Class-based dark mode: <html class="dark"> */
+@custom-variant dark (&:where(.dark, .dark *));
+
+/* ---------- Design tokens ---------- */
+:root {
+  --bg: #fbfbfd;
+  --surface: #ffffff;
+  --surface-2: #f3f4f8;
+  --border: #e4e5ec;
+  --fg: #0f1020;
+  --muted: #555a6e;
+  --accent: #4f46e5; /* indigo-600, 6.3:1 on white */
+  --accent-strong: #4338ca;
+  --accent-soft: #eef0ff;
+  --accent-text: #4338ca;
+  --ring: #6366f1;
+  --todo-bg: #fff7e0;
+  --todo-fg: #8a5a00;
+  --todo-border: #e8b84a;
+  color-scheme: light;
+}
+
+.dark {
+  --bg: #0a0b14;
+  --surface: #11131f;
+  --surface-2: #171a29;
+  --border: #252840;
+  --fg: #ecedf6;
+  --muted: #9da1b8;
+  --accent: #4f46e5;
+  --accent-strong: #6366f1;
+  --accent-soft: #1b1c3a;
+  --accent-text: #a5b4fc; /* indigo-300 */
+  --ring: #818cf8;
+  --todo-bg: #2a2110;
+  --todo-fg: #f5c766;
+  --todo-border: #7a5a1c;
+  color-scheme: dark;
+}
+
+@theme inline {
+  --color-bg: var(--bg);
+  --color-surface: var(--surface);
+  --color-surface-2: var(--surface-2);
+  --color-border: var(--border);
+  --color-fg: var(--fg);
+  --color-muted: var(--muted);
+  --color-accent: var(--accent);
+  --color-accent-strong: var(--accent-strong);
+  --color-accent-soft: var(--accent-soft);
+  --color-accent-text: var(--accent-text);
+  --color-ring: var(--ring);
+
+  --font-sans: var(--font-inter), ui-sans-serif, system-ui, sans-serif;
+  --font-mono: var(--font-mono-jb), ui-monospace, SFMono-Regular, monospace;
+}
+
+/* ---------- Base ---------- */
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 5rem;
+  }
+
+  body {
+    background: var(--bg);
+    color: var(--fg);
+    font-family: var(--font-sans);
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+  }
+
+  ::selection {
+    background: var(--accent);
+    color: #fff;
+  }
+
+  :focus-visible {
+    outline: 2px solid var(--ring);
+    outline-offset: 3px;
+    border-radius: 6px;
+  }
+}
+
+/* ---------- Components ---------- */
+@layer components {
+  /* Visible content placeholder. Remove by filling the matching data field. */
+  .todo {
+    background: var(--todo-bg);
+    color: var(--todo-fg);
+    border: 1px dashed var(--todo-border);
+    border-radius: 6px;
+    padding: 0.05em 0.4em;
+    font-family: var(--font-mono);
+    font-size: 0.85em;
+    -webkit-box-decoration-break: clone;
+    box-decoration-break: clone;
+  }
+
+  .bg-grid {
+    background-image: radial-gradient(
+      color-mix(in oklab, var(--fg) 14%, transparent) 1px,
+      transparent 1px
+    );
+    background-size: 22px 22px;
+    mask-image: radial-gradient(ellipse 70% 60% at 50% 30%, #000 40%, transparent 100%);
+  }
+}
+
+/* ---------- Motion ---------- */
+[data-reveal] {
+  opacity: 0;
+  transform: translateY(14px);
+  transition:
+    opacity 600ms cubic-bezier(0.22, 1, 0.36, 1),
+    transform 600ms cubic-bezier(0.22, 1, 0.36, 1);
+  transition-delay: var(--reveal-delay, 0ms);
+}
+
+[data-reveal][data-visible="true"] {
+  opacity: 1;
+  transform: none;
+}
+
+@keyframes fade-up {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+.animate-fade-up {
+  animation: fade-up 700ms cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+@keyframes ping-soft {
+  75%,
+  100% {
+    transform: scale(2.2);
+    opacity: 0;
+  }
+}
+
+.animate-ping-soft {
+  animation: ping-soft 1.8s cubic-bezier(0, 0, 0.2, 1) infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+
+  [data-reveal] {
+    opacity: 1;
+    transform: none;
+  }
+}
