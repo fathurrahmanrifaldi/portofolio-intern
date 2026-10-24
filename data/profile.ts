@@ -3,7 +3,7 @@ import type { Profile } from "@/lib/types";
 export const profile: Profile = {
   name: "Fathur Rahman Rifaldi",
   shortName: "Fathur",
-  role: "IT Support | AI Automation & System Integration",
+  role: "IT Internshi | AI Automation | IT Support",
   tagline:
     "Building AI-powered automation and system integrations to streamline workflows, connect services, and solve real-world business problems efficiently.",
   status: "7th-semester Information Systems student",
@@ -11,7 +11,7 @@ export const profile: Profile = {
   availability: "3-6 Months",
   email: "fathurrahmanrifaldi@gmail.com",
   cvUrl:
-    "https://drive.google.com/file/d/1VbLh95IBsHviLtqM2QlRULOStFXcyafW/view?usp=sharing",
+    "https://drive.google.com/file/d/1Sl46dgx8-_kK4ZN9PSwazJgwW6WC-TS2/view?usp=sharing",
   socials: [
     {
       label: "GitHub",
