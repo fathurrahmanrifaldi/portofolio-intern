@@ -39,40 +39,7 @@ export const projects: Project[] = [
     image: "/projects/financial-tracker.png",
     imageAlt: "Screenshot of Financial-Tracker",
   },
-  {
-    slug: "customer-feedback-sentiment-analyzer",
-    title: "Customer Feedback Sentiment Analyzer",
-    originalName: "Customer Feedback Sentiment Analyzer",
-    overview:
-      "Automates collection and sentiment analysis of customer feedback from local data and other digital forms, eliminating slow manual processing and enabling rapid response to customer issues.",
-    architecture:
-      "Built using Langflow visual flow orchestration to process incoming messages, run text preprocessing, classify sentiment via Gemini AI, and serve categorized feedback to a React analytics frontend.",
-    stack: ["Langflow", "Gemini AI", "REST API"],
-    implementation: [
-      "Integrated processing with automated text preprocessing and sentiment classification pipelines",
-      "Implemented structured LLM categorization into positive, neutral, negative, and urgent sentiment classes",
-      "Developed an intuitive user interface for manual review, editing, and confirmation of sentiment tags",
-      "Designed a visual analytics dashboard displaying customer satisfaction trends, issue categories, and temporal feedback distribution",
-    ],
-    testingValidation: [
-      "Evaluated sentiment classification across multi-lingual feedback datasets to maximize sentiment detection accuracy",
-      "Validated real-time processing throughput to ensure incoming feedback was categorized within sub-second response times",
-    ],
-    securityConsiderations: [
-      "Masked customer phone numbers and sensitive personal data before forwarding messages to LLM processing",
-      "Secured API endpoints with CORS restrictions and token-based authentication on management routes",
-    ],
-    limitationsFutureImprovements: [
-      "Optimize data processing and visualization for large volumes of historical feedback data",
-      "Add automated AI draft replies to help support agents address negative feedback promptly",
-    ],
-    liveUrl: "https://simetrisku.vercel.app",
-    githubUrl: "https://github.com/fathurrahmanrifaldi/simetris",
-    youtubeUrl: "https://youtu.be/lSwo2c6EABI",
-    image: "/projects/customer-analyzer.png",
-    imageAlt: "Screenshot of the Customer Feedback Sentiment Analyzer",
-  },
-  {
+    {
     slug: "home-ai-agent",
     title: "Home AI Agent Infrastructure",
     originalName: "Home AI Agent Infrastructure",
@@ -105,6 +72,39 @@ export const projects: Project[] = [
     image: "/projects/ubuntu-img.png",
     imageAlt: "Screenshot of Ubuntu server",
   },
+  {
+    slug: "customer-feedback-sentiment-analyzer",
+    title: "Customer Feedback Sentiment Analyzer",
+    originalName: "Customer Feedback Sentiment Analyzer",
+    overview:
+      "Automates collection and sentiment analysis of customer feedback from local data and other digital forms, eliminating slow manual processing and enabling rapid response to customer issues.",
+    architecture:
+      "Built using Langflow visual flow orchestration to process incoming messages, run text preprocessing, classify sentiment via Gemini AI, and serve categorized feedback to a React analytics frontend.",
+    stack: ["Langflow", "Gemini AI", "REST API"],
+    implementation: [
+      "Integrated processing with automated text preprocessing and sentiment classification pipelines",
+      "Implemented structured LLM categorization into positive, neutral, negative, and urgent sentiment classes",
+      "Developed an intuitive user interface for manual review, editing, and confirmation of sentiment tags",
+      "Designed a visual analytics dashboard displaying customer satisfaction trends, issue categories, and temporal feedback distribution",
+    ],
+    testingValidation: [
+      "Evaluated sentiment classification across multi-lingual feedback datasets to maximize sentiment detection accuracy",
+      "Validated real-time processing throughput to ensure incoming feedback was categorized within sub-second response times",
+    ],
+    securityConsiderations: [
+      "Masked customer phone numbers and sensitive personal data before forwarding messages to LLM processing",
+      "Secured API endpoints with CORS restrictions and token-based authentication on management routes",
+    ],
+    limitationsFutureImprovements: [
+      "Optimize data processing and visualization for large volumes of historical feedback data",
+      "Add automated AI draft replies to help support agents address negative feedback promptly",
+    ],
+    liveUrl: "https://simetrisku.vercel.app",
+    githubUrl: "https://github.com/fathurrahmanrifaldi/simetris",
+    youtubeUrl: "https://youtu.be/lSwo2c6EABI",
+    image: "/projects/customer-analyzer.png",
+    imageAlt: "Screenshot of the Customer Feedback Sentiment Analyzer",
+  }
 ];
 
 export function getProject(slug: string): Project | undefined {
