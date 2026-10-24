@@ -27,9 +27,9 @@ export async function generateMetadata({
   const { slug } = await params;
   const project = getProject(slug);
   if (!project) return {};
-  const description = isTodo(project.problem)
-    ? `Case study: ${project.originalName}. Problem, role, architecture, and lessons learned.`
-    : project.problem;
+  const description = isTodo(project.overview)
+    ? `Case study: ${project.originalName}. Overview, architecture, implementation, and future improvements.`
+    : project.overview;
   return {
     title: project.title,
     description,
@@ -66,15 +66,17 @@ export default async function ProjectPage({ params }: { params: Promise<Params> 
           </h1>
           <p className="text-muted mt-3 italic">{project.originalName}</p>
           <p className="text-muted mt-6 text-lg leading-relaxed">
-            <TodoText>{project.problem}</TodoText>
+            <TodoText>{project.overview}</TodoText>
           </p>
           <div className="mt-6 flex flex-wrap items-center gap-x-6 gap-y-3">
             <ExternalLink href={project.liveUrl} label="Live demo" />
-            <ExternalLink
-              href={project.githubUrl}
-              label="GitHub"
-              icon={<GitHub width={16} height={16} />}
-            />
+            {project.githubUrl && (
+              <ExternalLink
+                href={project.githubUrl}
+                label="GitHub"
+                icon={<GitHub width={16} height={16} />}
+              />
+            )}
           </div>
         </header>
 
@@ -86,6 +88,7 @@ export default async function ProjectPage({ params }: { params: Promise<Params> 
         />
 
         <div className="mt-16 grid gap-12 lg:grid-cols-12">
+          {/* Left sticky column: YouTube embed + Bordered summary table */}
           <aside className="lg:col-span-4">
             <div className="space-y-6 lg:sticky lg:top-24">
               <YouTubeEmbed
@@ -95,9 +98,9 @@ export default async function ProjectPage({ params }: { params: Promise<Params> 
 
               <dl className="border-border bg-surface divide-border divide-y rounded-2xl border">
                 <div className="p-5">
-                  <dt className="text-muted font-mono text-xs uppercase">My role</dt>
-                  <dd className="text-fg mt-1.5 font-medium">
-                    <TodoText>{project.role}</TodoText>
+                  <dt className="text-muted font-mono text-xs uppercase">Overview</dt>
+                  <dd className="text-fg mt-1.5 text-sm leading-relaxed">
+                    <TodoText>{project.overview}</TodoText>
                   </dd>
                 </div>
                 <div className="p-5">
@@ -108,79 +111,103 @@ export default async function ProjectPage({ params }: { params: Promise<Params> 
                     ))}
                   </dd>
                 </div>
-                <div className="p-5">
-                  <dt className="text-muted font-mono text-xs uppercase">Outcome</dt>
-                  <dd className="text-fg mt-1.5">
-                    <TodoText>{project.outcome}</TodoText>
-                  </dd>
-                </div>
               </dl>
             </div>
           </aside>
 
+          {/* Right column: 7 structured case study sections */}
           <div className="space-y-14 lg:col-span-8">
-            <CaseSection title="The problem">
+            <CaseSection title="Overview">
               <p>
-                <TodoText>{project.problem}</TodoText>
+                <TodoText>{project.overview}</TodoText>
               </p>
             </CaseSection>
 
-            <CaseSection title="My role">
-              <p>
-                <TodoText>{project.role}</TodoText>
-              </p>
-            </CaseSection>
-
-            <CaseSection title="Architecture overview">
+            <CaseSection title="Architecture">
               <p>
                 <TodoText>{project.architecture}</TodoText>
               </p>
             </CaseSection>
 
-            <CaseSection title="Key features">
-              <ul className="space-y-3">
-                {project.features.map((f, i) => (
-                  <li key={i} className="flex gap-3">
-                    <span className="bg-accent mt-2.5 size-1.5 shrink-0 rounded-full" aria-hidden />
-                    <span>
-                      <TodoText>{f}</TodoText>
-                    </span>
-                  </li>
-                ))}
-              </ul>
-            </CaseSection>
-
-            <CaseSection title="Challenges and solutions">
-              <div className="space-y-4">
-                {project.challenges.map((c, i) => (
-                  <div key={i} className="border-border bg-surface rounded-2xl border p-5">
-                    <p className="text-fg font-medium">
-                      <span className="text-accent-text font-mono text-sm">Challenge · </span>
-                      <TodoText>{c.challenge}</TodoText>
-                    </p>
-                    <p className="mt-2">
-                      <span className="text-accent-text font-mono text-sm">Solution · </span>
-                      <TodoText>{c.solution}</TodoText>
-                    </p>
-                  </div>
+            <CaseSection title="Tech Stack">
+              <div className="flex flex-wrap gap-2">
+                {project.stack.map((t) => (
+                  <Badge key={t}>{t}</Badge>
                 ))}
               </div>
             </CaseSection>
 
-            <CaseSection title="Outcome">
-              <p>
-                <TodoText>{project.outcome}</TodoText>
-              </p>
+            <CaseSection title="Implementation">
+              {Array.isArray(project.implementation) ? (
+                <ul className="space-y-3">
+                  {project.implementation.map((item, i) => (
+                    <li key={i} className="flex gap-3">
+                      <span className="bg-accent mt-2.5 size-1.5 shrink-0 rounded-full" aria-hidden />
+                      <span>
+                        <TodoText>{item}</TodoText>
+                      </span>
+                    </li>
+                  ))}
+                </ul>
+              ) : (
+                <p>
+                  <TodoText>{project.implementation}</TodoText>
+                </p>
+              )}
             </CaseSection>
 
-            <CaseSection title="What I'd improve next">
-              <ul className="list-disc space-y-2 pl-5">
-                {project.nextSteps.map((s, i) => (
-                  <li key={i}>
-                    <TodoText>{s}</TodoText>
-                  </li>
-                ))}
-              </ul>
+            <CaseSection title="Testing & Validation">
+              {Array.isArray(project.testingValidation) ? (
+                <ul className="space-y-3">
+                  {project.testingValidation.map((item, i) => (
+                    <li key={i} className="flex gap-3">
+                      <span className="bg-accent mt-2.5 size-1.5 shrink-0 rounded-full" aria-hidden />
+                      <span>
+                        <TodoText>{item}</TodoText>
+                      </span>
+                    </li>
+                  ))}
+                </ul>
+              ) : (
+                <p>
+                  <TodoText>{project.testingValidation}</TodoText>
+                </p>
+              )}
+            </CaseSection>
+
+            <CaseSection title="Security Considerations">
+              {Array.isArray(project.securityConsiderations) ? (
+                <ul className="space-y-3">
+                  {project.securityConsiderations.map((item, i) => (
+                    <li key={i} className="flex gap-3">
+                      <span className="bg-accent mt-2.5 size-1.5 shrink-0 rounded-full" aria-hidden />
+                      <span>
+                        <TodoText>{item}</TodoText>
+                      </span>
+                    </li>
+                  ))}
+                </ul>
+              ) : (
+                <p>
+                  <TodoText>{project.securityConsiderations}</TodoText>
+                </p>
+              )}
+            </CaseSection>
+
+            <CaseSection title="Limitations & Future Improvements">
+              {Array.isArray(project.limitationsFutureImprovements) ? (
+                <ul className="list-disc space-y-2 pl-5">
+                  {project.limitationsFutureImprovements.map((item, i) => (
+                    <li key={i}>
+                      <TodoText>{item}</TodoText>
+                    </li>
+                  ))}
+                </ul>
+              ) : (
+                <p>
+                  <TodoText>{project.limitationsFutureImprovements}</TodoText>
+                </p>
+              )}
             </CaseSection>
           </div>
         </div>

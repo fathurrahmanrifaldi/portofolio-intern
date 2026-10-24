@@ -6,21 +6,26 @@
 export type Project = {
   slug: string;
   title: string;
-  /** Original (Indonesian) project name */
+  /** Original (Indonesian) project name / Subtitle */
   originalName: string;
-  /** One-line problem statement */
-  problem: string;
-  role: string;
-  stack: string[];
-  features: string[];
-  outcome: string;
+  /** Overview of the project */
+  overview: string;
+  /** Architecture description */
   architecture: string;
-  challenges: { challenge: string; solution: string }[];
-  nextSteps: string[];
+  /** Tech stack tags */
+  stack: string[];
+  /** Implementation details */
+  implementation: string[] | string;
+  /** Testing & validation methods or metrics */
+  testingValidation: string[] | string;
+  /** Security best practices and considerations */
+  securityConsiderations: string[] | string;
+  /** Known limitations and planned improvements */
+  limitationsFutureImprovements: string[] | string;
   /** Absolute URL or a "[TODO: ...]" string */
   liveUrl: string;
-  /** Absolute URL or a "[TODO: ...]" string */
-  githubUrl: string;
+  /** Absolute URL or a "[TODO: ...]" string (optional) */
+  githubUrl?: string;
   /** YouTube video URL or ID (optional). e.g. "https://www.youtube.com/watch?v=..." */
   youtubeUrl?: string;
   /** Path under /public, e.g. "/projects/basara.png". null shows a placeholder. */

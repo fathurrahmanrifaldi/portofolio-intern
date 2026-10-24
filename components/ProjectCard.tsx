@@ -48,20 +48,9 @@ export function ProjectCard({ project, index }: Props) {
         </h3>
         <p className="text-muted mt-1 text-sm italic">{project.originalName}</p>
 
-        <dl className="mt-5 space-y-3 text-[15px] leading-relaxed">
-          <div>
-            <dt className="text-fg font-medium">Problem</dt>
-            <dd className="text-muted">
-              <TodoText>{project.problem}</TodoText>
-            </dd>
-          </div>
-          <div>
-            <dt className="text-fg font-medium">My role</dt>
-            <dd className="text-muted">
-              <TodoText>{project.role}</TodoText>
-            </dd>
-          </div>
-        </dl>
+        <p className="text-muted mt-4 text-[15px] leading-relaxed">
+          <TodoText>{project.overview}</TodoText>
+        </p>
 
         <ul className="mt-5 flex flex-wrap gap-2" aria-label="Tech stack">
           {project.stack.map((tech) => (
