@@ -84,7 +84,7 @@ export const projects: Project[] = [
     nextSteps: ["Enhance AI capabilities for natural language understanding and task automation"],
     liveUrl: "https://evasalon.up.railway.app/",
     githubUrl: "https://github.com/fathurrahmanrifaldi/eva-salon",
-    youtubeUrl: "https://www.youtube.com/watch?v=dQw4w9WgXcQ",
+    youtubeUrl: "https://youtu.be/lSwo2c6EABI",
     image: "/projects/ubuntu-img.png",
     imageAlt: "Screenshot of the Eva Salon booking website",
   },
