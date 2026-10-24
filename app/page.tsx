@@ -12,7 +12,7 @@ export default function HomePage() {
     "@context": "https://schema.org",
     "@type": "Person",
     name: profile.name,
-    jobTitle: "Fullstack Web Developer (Intern candidate)",
+    jobTitle: "Automation Engineer | System Integration | IT Support (Internship)",
     url: siteUrl,
     email: `mailto:${profile.email}`,
     alumniOf: "Universitas Bina Sarana Informatika",

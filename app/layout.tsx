@@ -10,9 +10,9 @@ import "./globals.css";
 const inter = Inter({ subsets: ["latin"], variable: "--font-inter", display: "swap" });
 const mono = JetBrains_Mono({ subsets: ["latin"], variable: "--font-mono-jb", display: "swap" });
 
-const title = `${profile.name} | Fullstack Web Developer`;
+const title = `${profile.name} AI Automation | System Integration | IT Support`;
 const description =
-  "Portfolio of Fathur Rahman Rifaldi, an Information Systems student in Indonesia looking for a Fullstack / Web Developer internship. Laravel, PHP, PostgreSQL projects with case studies.";
+  "Portfolio of Fathur Rahman Rifaldi, an Information Systems student in Indonesia looking for a AI Automation / System Integration / IT Support internship. n8n, Langflow, Gemini AI projects with case studies.";
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
@@ -21,13 +21,16 @@ export const metadata: Metadata = {
   authors: [{ name: profile.name, url: siteUrl }],
   keywords: [
     "Fathur Rahman Rifaldi",
-    "Fullstack Web Developer",
+    "AI Automation",
+    "System Integration",
+    "IT Support",
+    "Automation Engineer",
     "Internship",
     "Magang",
     "PKL",
-    "Laravel",
-    "PHP",
-    "PostgreSQL",
+    "n8n",
+    "Langflow",
+    "Gemini AI",
     "Indonesia",
   ],
   alternates: { canonical: "/" },
@@ -61,11 +64,7 @@ export const viewport: Viewport = {
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html
-      lang="en"
-      suppressHydrationWarning
-      className={`${inter.variable} ${mono.variable}`}
-    >
+    <html lang="en" suppressHydrationWarning className={`${inter.variable} ${mono.variable}`}>
       <head>
         <script dangerouslySetInnerHTML={{ __html: themeScript }} />
         <noscript>
