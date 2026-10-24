@@ -3,7 +3,7 @@ import type { Profile } from "@/lib/types";
 export const profile: Profile = {
   name: "Fathur Rahman Rifaldi",
   shortName: "Fathur",
-  role: "IT Support | AI Automation | System Integration",
+  role: "Automation Engineer | System Integration | IT Support",
   tagline:
     "IT professional with hands-on experience in system administration, network troubleshooting, IT support, AI-powered automation, and system integration.",
   status: "7th-semester Information Systems student",
