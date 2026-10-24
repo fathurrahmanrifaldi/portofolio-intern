@@ -33,13 +33,13 @@ export const profile: Profile = {
     },
   ],
   about: [
-    "I study Information Systems at Universitas Bina Sarana Informatika, now in my 7th semester. I build fullstack web apps with Laravel and React/Supabase, store data in PostgreSQL or MySQL, and ship with Docker to Vercel or Railway.",
-    "I work by first mapping the business logic and data flow using ERDs and use case diagrams before writing code, then implementing it with transaction-safe, maintainable code. Before shipping, I stress-test critical flows like concurrent bookings or stock updates to catch race conditions early, not after deployment. ",
+    "Final-year Information Systems student with hands-on experience building AI-powered automation workflows,Telegram-based agents, and a self-hosted AI infrastructure.",
+    "Experienced in integrating AI services, designing n8n workflows, and leveraging AI tools for problem-solving, data analysis, and process automation.",
   ],
   lookingFor:
-    "I’m looking for a Fullstack/Web Developer internship (PKL/magang) on-site or remote, available for 3-6 months",
+    "Open for IT Support/Helpdesk, AI Automation Engineer, or System Integration internship (on-site or remote) for 3–6 months",
   facts: [
-    { label: "Focus", value: "Fullstack web development" },
+    { label: "Focus", value: "AI Automation" },
     { label: "Study", value: "Information Systems, 7th semester" },
     { label: "GPA", value: "3.7 / 4.0" },
     { label: "Based in", value: "Bekasi, Indonesia" },
