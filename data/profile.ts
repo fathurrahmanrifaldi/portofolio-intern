@@ -3,9 +3,9 @@ import type { Profile } from "@/lib/types";
 export const profile: Profile = {
   name: "Fathur Rahman Rifaldi",
   shortName: "Fathur",
-  role: "IT Internshi | AI Automation | IT Support",
+  role: "IT Support | AI Automation | System Integration",
   tagline:
-    "Building AI-powered automation and system integrations to streamline workflows, connect services, and solve real-world business problems efficiently.",
+    "IT professional with hands-on experience in system administration, network troubleshooting, IT support, AI-powered automation, and system integration.",
   status: "7th-semester Information Systems student",
   location: "Bekasi, Indonesia",
   availability: "3-6 Months",
